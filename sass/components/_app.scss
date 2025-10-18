@@ -1,0 +1,13 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/animation' as *;
+
+.app {
+    @include flex-center(center, center);
+    height: 75vh;
+
+    &__inputs {
+        @include flex-center(center, center);
+        width: 100vw;
+        gap: 4rem;
+    }
+}

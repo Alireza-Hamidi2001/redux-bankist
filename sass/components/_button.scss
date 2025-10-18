@@ -1,0 +1,36 @@
+@use '../abstracts/mixins' as *;
+
+button {
+    @include flex-center(center, center);
+    text-transform: uppercase;
+    font-weight: bold;
+    word-spacing: 1.5px;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    background: #ffd000;
+    color: #000;
+    font-family: 'ComicNeue';
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0 0 0.5rem black;
+    position: relative;
+    top: 0;
+    transition: all 0.2s;
+    // margin-top: 1rem;
+
+    &:hover {
+        background: #908245;
+        color: #ffffff;
+        top: -2px;
+    }
+
+    &:active {
+        background: black;
+    }
+}
+
+#nationalID {
+    margin-bottom: 2rem;
+}

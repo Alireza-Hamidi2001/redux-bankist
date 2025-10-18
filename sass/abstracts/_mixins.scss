@@ -1,0 +1,45 @@
+@mixin flex-center($justify: null, $align: null) {
+    display: flex;
+
+    @if $justify !=null {
+        justify-content: $justify;
+    }
+
+    @if $align !=null {
+        align-items: $align;
+    }
+}
+
+@mixin respond($breakpoint) {
+    @if($breakpoint ==phone) {
+        @media only screen and (max-width: 37.5em) {
+            @content
+        }
+    }
+
+    ;
+
+    @if($breakpoint ==tab-port) {
+        @media only screen and (max-width: 56.25em) {
+            @content
+        }
+    }
+
+    ;
+
+    @if($breakpoint ==tab-land) {
+        @media only screen and (max-width: 75em) {
+            @content
+        }
+    }
+
+    ;
+
+    @if($breakpoint ==big-desktop) {
+        @media only screen and (max-width: 112.5em) {
+            @content
+        }
+    }
+
+    ;
+}

@@ -1,0 +1,90 @@
+@use './../abstracts/mixins' as *;
+
+.modal {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: max-content;
+    z-index: 9999;
+    padding: 1rem 4rem;
+    font-size: 1.8rem;
+    font-family: 'Courgette';
+    border-radius: 5px;
+    @include flex-center(null, center);
+    display: flex;
+    align-items: center;
+    animation: modal 1s;
+
+    &__Error {
+        background: #f2a4a4;
+        color: darkred;
+        border-left: 6px solid darkred;
+
+        &> :first-child {
+            color: #b01919;
+            font-size: 3rem;
+        }
+
+        & p {
+            margin: 0 1rem;
+        }
+
+        & span {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            font-size: 1.2rem;
+            color: #b01919;
+            cursor: pointer;
+        }
+
+    }
+
+    &__Done {
+        background: #a5f4a2;
+        color: #0c753d;
+        border-left: 6px solid darkolivegreen;
+
+        &> :first-child {
+            color: #0c753d;
+            font-size: 3rem;
+        }
+
+        & p {
+            margin: 0 1rem;
+        }
+
+        & span {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            font-size: 1.2rem;
+            color: #ff0000;
+            cursor: pointer;
+        }
+    }
+
+    &__Warning {
+        background: #eff2a4;
+        color: #75730c;
+        border-left: 6px solid darkolivegreen;
+
+        &> :first-child {
+            color: #70750c;
+            font-size: 3rem;
+        }
+
+        & p {
+            margin: 0 1rem;
+        }
+
+        & span {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            font-size: 1.2rem;
+            color: #ff0000;
+            cursor: pointer;
+        }
+    }
+}

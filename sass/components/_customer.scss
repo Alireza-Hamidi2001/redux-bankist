@@ -1,0 +1,30 @@
+@use '../abstracts/mixins' as *;
+
+.createCustomer {
+    @include flex-center(center, center);
+    flex-direction: column;
+    animation: loginReveal 1s ease-out;
+
+    & span {
+        position: absolute;
+    }
+
+    & span:nth-child(1) {
+        left: 30%;
+        background: #aaa;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        animation: dotOne 5s infinite ease-in-out;
+    }
+
+    & span:nth-child(2) {
+        right: 35%;
+        top: 40%;
+        background: #eadfdf;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        animation: dotTwo 3s infinite ease-in-out;
+    }
+}

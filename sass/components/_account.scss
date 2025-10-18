@@ -1,0 +1,11 @@
+@use './../abstracts/mixins' as *;
+
+.account__container {
+    animation: accountReveal 1s ease-out;
+
+    @include respond(phone) {
+        @include flex-center(center, center);
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+}

@@ -1,0 +1,20 @@
+@use './../abstracts/mixins' as *;
+
+.footer {
+    color: #fff;
+    font-family: "Caveat";
+    position: absolute;
+
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    font-size: 2.5rem;
+    text-align: center;
+    animation: footerAnimation 2s;
+
+    @include respond(phone) {
+        padding: 0 2rem;
+        font-size: 1.8rem;
+
+    }
+}

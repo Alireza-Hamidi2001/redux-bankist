@@ -1,0 +1,5 @@
+@use './variables' as vars;
+
+@function color($palette, $shade) {
+    @return map-get(map-get(vars.$colors, $palette), $shade);
+}
