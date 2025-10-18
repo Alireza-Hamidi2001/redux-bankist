@@ -1,12 +1,11 @@
-import { ImUserCheck } from "react-icons/im";
+import { FaUser } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 function Customer() {
     const fullName = useSelector((store) => store.customer.fullName);
     return (
         <h2 className="welcome">
-            <ImUserCheck className="userCheck" /> Welcome ,{" "}
-            <span>{fullName}</span>
+            <FaUser className="userCheck" /> Welcome , <span>{fullName}</span>
         </h2>
     );
 }

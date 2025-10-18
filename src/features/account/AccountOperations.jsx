@@ -8,7 +8,7 @@ import { FaCheck } from "react-icons/fa6";
 import { BiSolidMessageError } from "react-icons/bi";
 
 import Modal from "../modal/Modal";
-import { loanRequest, payLoan, withdraw } from "./AccountSlice";
+import { deposit, loanRequest, payLoan, withdraw } from "./AccountSlice";
 
 function AccountOperations() {
     const [depositAmount, setDepositAmount] = useState("");
@@ -33,7 +33,12 @@ function AccountOperations() {
     const modalDone = "modal__Done";
     const modalError = "modal__Error";
 
-    function handleDeposit() {}
+    function handleDeposit() {
+        if (!depositAmount) return;
+        dispatch(deposit(depositAmount, currency));
+        setDepositAmount("");
+        setCurrency("USD");
+    }
 
     function handleWithdrawal() {
         if (withdrawalAmount == "") {
