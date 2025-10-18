@@ -14,6 +14,7 @@ function AccountOperations() {
     const [depositAmount, setDepositAmount] = useState("");
     const [withdrawalAmount, setWithdrawalAmount] = useState("");
     const balance = useSelector((store) => store.account.balance);
+    const loan = useSelector((store) => store.account.loan);
     const dispatch = useDispatch();
     const [loanAmount, setLoanAmount] = useState("");
     const [loanPurpose, setLoanPurpose] = useState("");
@@ -25,6 +26,8 @@ function AccountOperations() {
 
     const [requestLoanError, setRequestLoanError] = useState(false);
     const [requestLoanDone, setRequestLoanDone] = useState(false);
+
+    const [loanDone, setLoanDone] = useState(false);
 
     const modalWarning = "modal__Warning";
     const modalDone = "modal__Done";
@@ -62,6 +65,8 @@ function AccountOperations() {
     }
 
     function handlePayLoan() {
+        if (loan === 0) return;
+        setLoanDone(true);
         dispatch(payLoan());
     }
 
@@ -145,7 +150,7 @@ function AccountOperations() {
                     <label htmlFor="payLoan">
                         {" "}
                         <GoDotFill className="acoount-list" />
-                        Pay back $X
+                        Pay back {loan}
                     </label>
                     <button
                         id="payLoan"
@@ -202,6 +207,13 @@ function AccountOperations() {
                     <span onClick={() => setRequestLoanError(false)}>
                         &#10006;
                     </span>
+                </Modal>
+            )}
+            {loanDone && (
+                <Modal modalType={modalDone}>
+                    <BiSolidMessageError />
+                    <p>Pay loan back successfully.</p>
+                    <span onClick={() => setLoanDone(false)}>&#10006;</span>
                 </Modal>
             )}
         </div>
